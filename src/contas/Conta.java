@@ -2,8 +2,22 @@ package contas;
 
 public class Conta {
     //atributos
-    protected String cliente;
-    protected double saldo;
+    //o primeiro passo para encapsular uma variável é usar o modificador private depois criar 2 métodos públ p/ acessar a var
+    private String cliente;
+    public String getCliente() {
+        return cliente;
+    }
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    private double saldo;
+    public double getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     //construtor
     public Conta() {
