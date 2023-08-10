@@ -4,8 +4,10 @@ public class PessoaFisica {
     public static void main(String[] args) {
         Conta cc1 = new Conta();
         cc1.cliente = "Leandro Ramos";
-        cc1.saldo = 1000;
+        cc1.saldo = 10000;
         System.out.println("Cliente: " + cc1.cliente);
+        cc1.exibirSaldo();
+        cc1.sacar(1000);
         cc1.exibirSaldo();
 
         System.out.println("------------------------------");
@@ -15,5 +17,20 @@ public class PessoaFisica {
         cc2.saldo = 8500;
         System.out.println("Cliente: " + cc2.cliente);
         cc2.exibirSaldo();
+        cc2.depositar(5000);
+        cc2.exibirSaldo();
+
+        System.out.println("------------------------------\nTranferência");
+        System.out.println("Cliente: " + cc1.cliente);
+        cc1.transferir(cc2, 2000);
+        System.out.println("\nCliente: " + cc1.cliente);
+        cc1.exibirSaldo();
+        System.out.println("Cliente: " + cc2.cliente);
+        cc2.exibirSaldo();
+
+        System.out.println("------------------------------\nRelatório gerencial");
+        Conta gerente = new Conta();
+        double relatorio = gerente.soma(cc1.saldo, cc2.saldo);
+        System.out.println("Saldo total nas contas: R$ " + relatorio);
     }
 }
